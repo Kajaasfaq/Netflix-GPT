@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'red-net': '"rgb(255, 255, 255)"',
+      },
+    },
+    fontFamily: {
+      'body': ['"Netflix Sans"','"Helvetica Neue"','"Segoe UI"','"Roboto"','"Ubuntu"','"sans-serif"'
+    ],
+    }
   },
   plugins: [],
 }
