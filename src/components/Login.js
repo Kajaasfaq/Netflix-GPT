@@ -13,9 +13,10 @@ import { createUserWithEmailAndPassword , signInWithEmailAndPassword } from 'fir
 import { auth } from '../utils/Firebase'
 import { useEffect } from 'react'
 import { updateProfile } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addUser } from '../utils/UserSlice'
+import { addUser } from '../utils/Slice/UserSlice'
+import { useNavigate } from 'react-router-dom'
+// import { Outlet } from 'react-router-dom'
 
 
 
@@ -40,6 +41,8 @@ const Login = () => {
 
   const navigate = useNavigate()
 
+
+
   const dispatch = useDispatch()
   const Email = useRef(null)
   const Password = useRef(null)
@@ -61,15 +64,14 @@ const Login = () => {
       console.log(user)
       updateProfile(user, {
         displayName: Fullname.current.value,
-        photoURL : "https://lh3.googleusercontent.com/a/ALm5wu12x8qS4EM_kVkoDaadUMUbMKNp-_dztIditBtndw=s96-c"
+        photoURL : "https://lh3.googleusercontent.com/ogw/AKPQZvw-Te6LSryyOvhsVFCgJAuxNPVEVkoxuCUNCsalyA=s32-c-mo"
       })
       .then( () => {
         const {uid , email , displayName , photoURL} = auth.currentUser
         dispatch(addUser({uid: uid , email: email, displayName: displayName , photoURL : photoURL}))
       })
-      navigate("/browse")
       setSuccessMessage("Account Create SuccessFully ")
-
+      navigate("/browse")
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -207,7 +209,7 @@ const Login = () => {
       </div>
     </div>
     <Header/>
-    
+    {/* <Outlet/> */}
     </>
   )
 }
