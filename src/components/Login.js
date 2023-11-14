@@ -61,7 +61,6 @@ const Login = () => {
     .then((userCredential) => {
       
       const user = userCredential.user;
-      console.log(user)
       updateProfile(user, {
         displayName: Fullname.current.value,
         photoURL : "https://lh3.googleusercontent.com/ogw/AKPQZvw-Te6LSryyOvhsVFCgJAuxNPVEVkoxuCUNCsalyA=s32-c-mo"
@@ -102,7 +101,6 @@ const Login = () => {
 .then((userCredential) => {
  
   const user = userCredential.user;
-  console.log(user)
   navigate("/browse")
   setSuccessMessage("Welcome Back "+ user.displayName )
 })

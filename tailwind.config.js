@@ -10,7 +10,15 @@ module.exports = {
     fontFamily: {
       'body': ['"Netflix Sans"','"Helvetica Neue"','"Segoe UI"','"Roboto"','"Ubuntu"','"sans-serif"'
     ],
-    }
+    scrollbar: {
+      hide: {
+        '::-webkit-scrollbar': {
+          display: 'none',
+        },
+  }},
+}
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide'),
+  ],
 }
