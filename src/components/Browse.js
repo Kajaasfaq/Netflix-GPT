@@ -20,8 +20,11 @@ import Footer from '../components/Footer'
 import useTopRatedTvShow from '../hooks/useTopRatedTvShow'
 import usePopularTvShow from '../hooks/usePopularTvShow'
 import useAiringTvShow from '../hooks/useAiringTvShow'
+import { ToogleGptState } from '../utils/Slice/GptStateSlice'
+import Gptsearch from './Gptsearch'
 
 const Browse = () => {
+  const GptOpenToG = useSelector(store => store.Gpt.GptOpen)
   const user = useSelector(store => store.user)
   const NowPlayingList = useSelector(store => store.movies?.NowplayingMoviesList)
 
@@ -34,6 +37,7 @@ const Browse = () => {
   useTopRatedTvShow()
   usePopularTvShow()
 
+  
   
   const [showicon , setshowicon] = useState(false)
   const [error , Seterror] = useState("")
@@ -59,13 +63,17 @@ signOut(auth).then(() => {
   }
 });}
 
+const handleGptOpen = () => {
+  Dispatch(ToogleGptState())
+}
+
   return (
     <>
     <div>
-    <div className='flex flex-row h-[105px] absolute z-10 bg-gradient-to-r from-black'>
+    <div className='flex flex-row h-[105px] absolute z-10 bg-gradient-to-l from-black'>
     <Link to="/"><Header/></Link>
     <div>
-      <ul className='flex flex-row gap-4 ml-[360px] mt-[56px] text-white font-body font-normal'>
+      <ul className='flex flex-row gap-4 ml-[370px] mt-[56px] text-white font-body font-normal'>
         <li className="cursor-pointer">Home</li>
         <li className="cursor-pointer">Tv Shows</li>
         <li className="cursor-pointer">Movies</li>
@@ -76,8 +84,19 @@ signOut(auth).then(() => {
     </div>
     {error ? <div className='text-white'>{error}</div> : null }
     <div className='flex gap-3 '>
-      {user && (<div className='text-white absolute z-30 mt-[50px] ml-[710px]'>Hello</div>)}
-      <img alt="Netflix-Profile" className="w-12 h-12 mt-9 ml-[790px] rounded-lg cursor-pointer z-30" src={user?.photoURL} onClick={IconShow}/>
+      {user && (<div className='text-white absolute z-30 mt-[37px] ml-[660px] '>
+        <button className='p-3 bg-red-600 text-white rounded-xl hover:bg-red-800' onClick={handleGptOpen}>{GptOpenToG ? "Home" : "GPT-Search"}</button>
+      </div>)}
+      {user &&  (GptOpenToG ?  
+        <div className=' absolute ml-[550px] text-white mt-10 '>
+          <select className='bg-black text-white  rounded-lg focus:border-white active:border-white p-3 font-body'>
+            <option value="en">English</option>
+            <option value="tamil">Tamil</option>
+            <option value="hindi">Hindi</option>
+            <option value="arabic">Arabic</option>
+          </select>
+        </div> : null )}
+      <img alt="Netflix-Profile" className="w-12 h-12 mt-9 ml-[780px] rounded-lg cursor-pointer z-30" src={user?.photoURL} onClick={IconShow}/>
       <img alt="Netflix-Profile" className="w-4 h-3 mt-14 cursor-pointer" src={DownIcon} onClick={IconShow} 
       onMouseEnter={() => setshowicon(true)}/>
     </div>
@@ -101,12 +120,17 @@ signOut(auth).then(() => {
       </div></div> : null}
     
     <div> 
+      {GptOpenToG ? <Gptsearch/> : 
+      <>
         <MainSection/>
         <SecondarySection/>
+      </> }
+        
     </div>
+    {GptOpenToG ? null : 
     <div className='bg-black h-[395px] w-[100%] flex flex-row'>
-      <Footer/>
-    </div>
+      <Footer/> 
+    </div>}
     </div> 
     </>
   )

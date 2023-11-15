@@ -1,3 +1,4 @@
+import GptState from "../Slice/GptStateSlice";
 import MoviesSlice from "../Slice/MoviesSlice";
 import UserSlice from "../Slice/UserSlice";
 
@@ -7,6 +8,7 @@ const appstore = configureStore({
     reducer : {
         user : UserSlice,
         movies : MoviesSlice,
+        Gpt : GptState
     }
 })
 
