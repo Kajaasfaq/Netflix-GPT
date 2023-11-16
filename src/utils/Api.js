@@ -2,7 +2,7 @@ export const Apioptions = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YzI1Nzk2ZmUwYmY1NDRmOGViYWMxZmE4NzYyODY1MyIsInN1YiI6IjY1NGUyZTczZDQ2NTM3MDBlMWE3NWE0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.J_2cCaazY7ALqBkplkbxrAZ0tTtiK4r7tJDOwEHFgJk'
+      Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY,
     }
   };
 

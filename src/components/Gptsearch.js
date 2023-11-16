@@ -34,14 +34,13 @@ const Gptsearch = () => {
     const movie = SearchTVResult?.current?.value;
     const data = await fetch('https://api.themoviedb.org/3/search/tv?query='+ movie +'&include_adult=false&language=en-US&page=1', Apioptions)
     const response = await data.json()
-    console.log(response.results)
     const searchResult = response?.results
     dispatch(AddTVSearchList(searchResult))
   }
 
 
   // const searchMovieData = async(movie) => {
-  //   const data = await fetch('https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1', Apioptions)
+  //   const data = await fetch("https://api.themoviedb.org/3/search/"+ movie +"?include_adult=false&language=en-US&page=1", Apioptions)
   //   const response = await data.json()
   //   return response.results;
   // }
@@ -55,7 +54,7 @@ const Gptsearch = () => {
   //       messages: [{ role: 'user', content: GptQurey }],
   //       model: 'gpt-3.5-turbo',
   //     }).catch((err) => {console.log(err)}) ;
-  //     if(!Gptsearch.content) return
+  //     if(!Gptsearch.content) return 
       
   //     const GptsearchMovie = Gptsearch.choices?.[0]?.message?.content.split(",")
 
@@ -95,12 +94,12 @@ const Gptsearch = () => {
             <Footer/>
         </div>
         <div className=''>
-        <div className='absolute top-96 flex overflow-hidden hover:overflow-x-scroll scrollbar-hide w-[100%]'>
+        <div className='absolute top-[380px] flex overflow-hidden hover:overflow-x-scroll scrollbar-hide w-[100%]'>
           <div className='flex'>
           {movie.SearchMovieList && <MovieList title="Search Results For Movie" movies={movie.SearchMovieList}/>}
           </div>
         </div>
-        <div className='absolute top-[650px] flex overflow-hidden hover:overflow-x-scroll scrollbar-hide w-[100%]'>
+        <div className='absolute top-[680px] flex overflow-hidden hover:overflow-x-scroll scrollbar-hide w-[100%]'>
           <div className='flex'>
           {movie.SearchTvList && <MovieList title="Search Results For Tv Shows" movies={movie.SearchTvList}/>}
           </div>
