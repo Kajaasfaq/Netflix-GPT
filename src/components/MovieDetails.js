@@ -13,9 +13,9 @@ const MovieDetails = () => {
 
   return (
     <>
-    <div className='flex flex-col'>
-    {MovieData.original_title}
-    {MovieData.overview}
+    <div>
+      <div className='bg-black opacity-70'>
+      </div>
    </div>
     </>
     

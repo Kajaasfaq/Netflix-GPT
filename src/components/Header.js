@@ -1,5 +1,5 @@
 import React from 'react'
-import NetflixIcon from "../utils/netflix-removebg-preview.png"
+import NetflixIcon from "../utils/images/netflix-removebg-preview.png"
 import { Link } from 'react-router-dom'
 import { addUser , removeUser } from '../utils/Slice/UserSlice'
 import { getAuth, onAuthStateChanged } from "firebase/auth";

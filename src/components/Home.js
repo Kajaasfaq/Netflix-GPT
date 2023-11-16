@@ -6,7 +6,7 @@ import { useFormControl } from "@mui/material/FormControl";
 import { Link } from 'react-router-dom';
 import Underline from './Underline';
 import { NetflixTv } from '../utils/Image';
-import  NetflixTv3  from '../utils/netflix-pic_3-removebg-preview.png'
+import  NetflixTv3  from '../utils/images/netflix-pic_3-removebg-preview.png'
 import MyAccordion from './MyAccordion';
 import Footer from './Footer';
 

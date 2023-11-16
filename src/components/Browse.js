@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import NetflixRed from "../utils/red profile icon.jpg"
-import DownIcon from "../utils/down.png"
-import NetflixBlue from "../utils/bule profile icon.png"
-import NetflixYellow from "../utils/yellow profile icon.png"
+import NetflixRed from "../utils/images/red profile icon.jpg"
+import DownIcon from "../utils/images/down.png"
+import NetflixBlue from "../utils/images/bule profile icon.png"
+import NetflixYellow from "../utils/images/yellow profile icon.png"
 import { signOut } from "firebase/auth";
 import { auth } from '../utils/Firebase'
 import { useDispatch, useSelector } from 'react-redux'
