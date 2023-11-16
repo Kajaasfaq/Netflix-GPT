@@ -1,4 +1,5 @@
 import GptState from "../Slice/GptStateSlice";
+import MovieDetails from "../Slice/MovieDetails";
 import MoviesSlice from "../Slice/MoviesSlice";
 import MultiLang from "../Slice/MultiLang";
 import UserSlice from "../Slice/UserSlice";
@@ -11,6 +12,7 @@ const appstore = configureStore({
         movies : MoviesSlice,
         Gpt : GptState,
         MultiLang : MultiLang,
+        moviedetails : MovieDetails,
     }
 })
 
