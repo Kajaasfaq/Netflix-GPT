@@ -7,4 +7,3 @@ export const SUPPORT_LANG = [
 
 
 
-export const OPEN_KEY = "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"
