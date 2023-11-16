@@ -12,6 +12,4 @@ export const Apioptions = {
 
   
 
-      // <MovieList title={"Popular"} movies={movies.PopularMovieList}/>
-      // <MovieList title={"TopRated"} movies={movies.TopRatedMovieList}/>
-      // <MovieList title={"UpComing"} movies={movies.UpComingMovieList}/>
+     

@@ -22,6 +22,8 @@ import usePopularTvShow from '../hooks/usePopularTvShow'
 import useAiringTvShow from '../hooks/useAiringTvShow'
 import { ToogleGptState } from '../utils/Slice/GptStateSlice'
 import Gptsearch from './Gptsearch'
+import { SUPPORT_LANG } from '../utils/Constants'
+import { AddSupportLang } from '../utils/Slice/MultiLang'
 
 const Browse = () => {
   const GptOpenToG = useSelector(store => store.Gpt.GptOpen)
@@ -67,6 +69,10 @@ const handleGptOpen = () => {
   Dispatch(ToogleGptState())
 }
 
+const handleMultiLang = (e) => {
+  Dispatch(AddSupportLang(e.target.value))
+}
+
   return (
     <>
     <div>
@@ -89,11 +95,9 @@ const handleGptOpen = () => {
       </div>)}
       {user &&  (GptOpenToG ?  
         <div className=' absolute ml-[550px] text-white mt-10 '>
-          <select className='bg-black text-white  rounded-lg focus:border-white active:border-white p-3 font-body'>
-            <option value="en">English</option>
-            <option value="tamil">Tamil</option>
-            <option value="hindi">Hindi</option>
-            <option value="arabic">Arabic</option>
+          <select className='bg-black text-white  rounded-lg focus:border-white active:border-white p-3 font-body' onChange={handleMultiLang}>
+            {SUPPORT_LANG.map(lang => 
+            <option value={lang.identifier} key={lang.identifier}>{lang.name}</option> )}
           </select>
         </div> : null )}
       <img alt="Netflix-Profile" className="w-12 h-12 mt-9 ml-[780px] rounded-lg cursor-pointer z-30" src={user?.photoURL} onClick={IconShow}/>

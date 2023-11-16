@@ -13,6 +13,8 @@ const MoviesSlice = createSlice({
         TopRatedTvShowList : null,
         AiringTvShowList : null,
         PopularTvShowList : null,
+        SearchMovieList : null,
+        SearchTvList : null,
     },
     reducers : {
         AddNowmovies : (state , action) => {
@@ -45,11 +47,17 @@ const MoviesSlice = createSlice({
         AddPopularTvShow:(state, action) => {
             state.PopularTvShowList = action.payload
         },
-        
+        AddSearchList:(state, action) => {
+            state.SearchMovieList = action.payload
+        },
+        AddTVSearchList:(state, action) => {
+            state.SearchTvList = action.payload
+        },
         
     }
 })
 
-export const {AddNowmovies , TrailerMovie , TrailerVideo , AddPopular, AddUpcoming , AddTopRated , AddTvTrendingList , AddAiringTvShow , AddPopularTvShow , AddTopRatedTvShow} = MoviesSlice.actions
+export const {AddNowmovies , TrailerMovie , TrailerVideo , AddPopular, AddUpcoming , AddTopRated , AddTvTrendingList , AddAiringTvShow , AddPopularTvShow , AddTopRatedTvShow
+, AddSearchList , AddTVSearchList} = MoviesSlice.actions
 
 export default MoviesSlice.reducer
