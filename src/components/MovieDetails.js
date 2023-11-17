@@ -16,6 +16,9 @@ const MovieDetails = () => {
     <div>
       <div className='bg-black opacity-70'>
         {MovieData.original_title}
+        {MovieData.original_title}
+        {MovieData.original_title}
+        {MovieData.original_title}
       </div>
    </div>
     </>
