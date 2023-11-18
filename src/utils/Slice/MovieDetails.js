@@ -5,6 +5,8 @@ const MovieDetails = createSlice({
     initialState : {
         movieData : null,
         movieImg : null,
+        movieVideo : null,
+
     },
     reducers : {
         addMovieDetails : (state , action) => {
@@ -12,10 +14,13 @@ const MovieDetails = createSlice({
         },
         addMovieDetailsImg : (state , action) => {
             state.movieImg = action.payload
-            }
+        },
+        addMovieDetailsVideo : (state , action) => {
+            state.movieVideo = action.payload
+        }
     }
 })
 
-export const { addMovieDetails ,  addMovieDetailsImg  } = MovieDetails.actions
+export const { addMovieDetails ,  addMovieDetailsImg  , addMovieDetailsVideo} = MovieDetails.actions
 
 export default MovieDetails.reducer

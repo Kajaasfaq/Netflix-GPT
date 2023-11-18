@@ -8,6 +8,8 @@ export const Apioptions = {
 
   export const ImageCDN = "https://image.tmdb.org/t/p/w500"
 
+  export const ImageCDNO = "https://image.tmdb.org/t/p/w1200"
+
 
 
   

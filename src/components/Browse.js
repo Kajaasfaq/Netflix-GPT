@@ -24,6 +24,7 @@ import { ToogleGptState } from '../utils/Slice/GptStateSlice'
 import Gptsearch from './Gptsearch'
 import { SUPPORT_LANG } from '../utils/Constants'
 import { AddSupportLang } from '../utils/Slice/MultiLang'
+import Shimmer from './Shimmer'
 
 const Browse = () => {
   const GptOpenToG = useSelector(store => store.Gpt.GptOpen)
@@ -47,7 +48,8 @@ const Browse = () => {
   const navigate = useNavigate()
   const Dispatch = useDispatch()
    
-  if(!NowPlayingList) return
+  if(!NowPlayingList) return <Shimmer/>
+
   const MoviesTrailer = NowPlayingList[1]
   Dispatch(TrailerMovie(MoviesTrailer))
 

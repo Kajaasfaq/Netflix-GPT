@@ -2,6 +2,8 @@ import { useEffect } from "react"
 import { Apioptions } from "../utils/Api"
 import { useDispatch } from "react-redux"
 import { addMovieDetails } from "../utils/Slice/MovieDetails"
+import useMovieDetailsVideo from "./useMovieDetailsVideo"
+import useMovieDetailsImg from "./useMovieDetailsImg"
 
 const useMovieDetails = (movieid) => {
 
@@ -16,6 +18,8 @@ const useMovieDetails = (movieid) => {
         const respone = await data.json()
         dispatch(addMovieDetails(respone))
     }
+    useMovieDetailsImg(movieid)
+    useMovieDetailsVideo(movieid)
 
 }
 
