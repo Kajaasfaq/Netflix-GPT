@@ -37,7 +37,7 @@ const MovieDetails = () => {
            </div></Link>
       </div>
    <div>{!VideoKey ? <Shimmer/>  : 
-   <div className='absolute top-0 -z-40 aspect-video w-full h-full '>
+   <div className='absolute top-0 -z-40 aspect-video w-full h-full'>
      <div className="bg-black"><iframe  width="" height="900" className="aspect-video ml-20"
       src={"https://www.youtube.com/embed/"+ VideoKey +"?&autoplay=1&mute=1&rel=0&loop=1"}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
