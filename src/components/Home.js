@@ -33,11 +33,11 @@ const Home = () => {
   return (
     <>
     <div>
-    <img src={NetflixBG} alt="icon" className="h-[700px] w-[100%] "/>
+    <img src={NetflixBG} alt="icon" className="lg:h-[700px] lg:w-[100%] w-[100%] h-[700px]"/>
     <div className=" bg-black opacity-[0.75] h-[700px] w-[100%] absolute top-0"></div>
     <div className="">
         <Header />
-        <Link to="/login"><button className="bg-[#E50914] hover:bg-[#C11119] text-white border-solid rounded-b-[3px] rounded-t-[3px]  h-[34px] w-[72px] absolute top-[50px] ml-[1500px]">Sign In</button></Link>
+        <Link to="/login"><button className="bg-[#E50914] hover:bg-[#C11119] text-white border-solid rounded-b-[3px] rounded-t-[3px]  h-[34px] w-[72px] lg:h-[34px] lg:w-[72px] absolute lg:top-[50px] lg:ml-[1500px]">Sign In</button></Link>
     </div>
     <div className='absolute top-[225px] text-center ml-[225px]'>
         <h1 className='text-[48px] font-black font-body text-white'>The biggest Indian hits. Ready to watch here from ₹ 149.</h1>
