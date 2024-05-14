@@ -50,9 +50,9 @@ const MovieDetails = () => {
 
       <div className=' w-full h-[800px] relative -top-14 bg-gradient-to-t from-transparent'>
         <div className='bg-black'>
-        <h1 className="text-green-600 font-body font-medium text-2xl ml-36 mt-5">99% Match</h1>
+        <h1 className="text-green-600 font-body font-medium text-2xl ml-28 mt-5">99% Match</h1>
           <div className='flex flex-row gap-3 mt-5'>
-          <div className='flex flex-row ml-36'><h1 className='text-white'><span className="text-gray-500">Genres : </span></h1>{MovieDetailData?.genres.map(genre =>  <div key={genre.id} className='text-white px-1'>{genre.name}</div>)}</div>
+          <div className='flex flex-row ml-28'><h1 className='text-white'><span className="text-gray-500">Genres : </span></h1>{MovieDetailData?.genres.map(genre =>  <div key={genre.id} className='text-white px-1'>{genre.name}</div>)}</div>
           <h1 className="text-white "><span className="text-gray-500">Total BoxOffice Collection : </span>{MovieDetailData?.revenue}</h1>
           <h1 className="text-white "><span className="text-gray-500">Total Budget : </span>{MovieDetailData?.budget}</h1>
           <h1 className="text-white "><span className="text-gray-500">Date :  </span>{MovieDetailData?.release_date}</h1>
@@ -60,16 +60,16 @@ const MovieDetails = () => {
           <h1 className="text-white "><span className="text-gray-500">Rating :  </span>{MovieDetailData?.vote_average}</h1>
           <h1 className="text-white "><span className="text-gray-500">Total Review count :  </span>{MovieDetailData?.vote_count}</h1>
           </div>
-          <h1 className='text-white font-body font-medium text-l ml-36 w-3/4 mt-5'>{MovieDetailData?.overview}</h1>
+          <h1 className='text-white font-body font-medium text-l ml-28 mt-5 w-[1500px]'>{MovieDetailData?.overview}</h1>
 
-         <div className='text-white font-body font-medium text-2xl pt-2 ml-36'>Movie Images</div>
-         <div className='flex overflow-hidden hover:overflow-x-scroll pt-4 ml-32 scrollbar-hide'>
+         <div className='text-white font-body font-medium text-2xl pt-5 ml-28'>Movie Images</div>
+         <div className='flex pt-4 ml-28 overflow-hidden hover:overflow-x-scroll scrollbar-hide w-[1600px]'>
          <div className='flex'>
          {MovieData?.movieImg?.backdrops?.map(file =><MovieCards posterPath={file?.file_path}/>)}
           </div></div>
 
          <div className='text-white font-body font-medium text-2xl pt-6 ml-36'>Movie Posters</div>
-         <div className='flex overflow-hidden hover:overflow-x-scroll pt-6 ml-32 scrollbar-hide'>
+         <div className='flex overflow-hidden hover:overflow-x-scroll pt-6 ml-32 scrollbar-hide w-[1600px]'>
          <div className='flex'>
          {MovieData?.movieImg?.posters?.map(file =><MovieCards posterPath={file?.file_path}/>)}
           </div></div>
