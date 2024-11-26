@@ -7,3 +7,9 @@ export const NetflixTv2 = "https://assets.nflxext.com/ffe/siteui/acquisition/our
 export const NetflixTv3 ="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
 
 export const NetflixTv4 = "https://occ-0-2085-2164.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d"
+
+
+
+export const NetflixLogoBig = "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+
+export const NetflixLogoSm = "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2023.ico"
